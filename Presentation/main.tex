@@ -1,6 +1,8 @@
 \documentclass{beamer}
-\usetheme{Darmstadt}
-\setbeamertemplate{headline}{}
+\usetheme{Warsaw}
+\setbeamercovered{transparent=5}
+
+
 
 
 % preamble
@@ -10,10 +12,21 @@
 
 \author{
 Leonardo Pereira Macedo\\
-Vinícius Bitencourt Matos
+Vinícius Bitencourt Matos\\\ \\
+Professor: Siang Wun Song\\
+MAC0412 -- Organização de Computadores
 }
 
 \date{1 de dezembro de 2015}
+
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{structure}%
+    \hspace{1em}%
+    \(\begin{array}{c}\insertframenumber/\inserttotalframenumber\\~\end{array}\)
+}
+
 
 \begin{document}
 \maketitle
@@ -22,7 +35,7 @@ Vinícius Bitencourt Matos
 \input{origem-e-evolucao}
 \input{blocos-de-construcao}
 \input{computacao-como-mercadoria}
-\input{outros-servicos-oferecidos}
+% \input{outros-servicos-oferecidos}
 \input{modelo-de-implantacao}
 \input{gerenciamento-da-seguranca-da-informacao}
 \input{provedores-de-armazenamento}

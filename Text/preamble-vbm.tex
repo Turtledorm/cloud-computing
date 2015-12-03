@@ -12,9 +12,9 @@
 
 % page format
 \ifdefined\RELEASEDOCUMENT
-\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage[a4paper]{geometry}
 \else
-\usepackage[a5paper, margin=1.5cm]{geometry}
+\usepackage[a5paper]{geometry}
 \fi
 
 % additional commands to math mode
@@ -30,9 +30,8 @@
 \usepackage{csquotes}
 \MakeOuterQuote{"}
 
-
-% support coloured links, PDF bookmarks, etc.
-%\usepackage[colorlinks=false, pdfstartview=FitH, pdfpagelayout=OneColumn]{hyperref}
+% allow access date, author, title
+\usepackage{titling}
 
 % remove space after a comma when it acts like a decimal separator
 \usepackage{icomma}
@@ -40,14 +39,11 @@
 % "cancel" terms with a slash
 %\usepackage{cancel}
 
-% enable use of colours
-%\usepackage{xcolor}
-
 % show customised enumerate 
 %\usepackage{enumerate}
 
 % support graphics
-%\usepackage{graphicx}
+\usepackage{graphicx}
 
 % input raw text
 %\usepackage{verbatim}
@@ -59,13 +55,40 @@
 %\usepackage{pdfpages}
 
 % allow forcing force a figure to be displayed "here"
-%\usepackage{float}
+\usepackage{float}
 
 % input code
 %\usepackage{listings} \lstset{basicstyle=\ttfamily}
 
 % add "lorem ipsum" text
-\usepackage{blindtext} \blindmathtrue
+%\usepackage{blindtext} \blindmathtrue
+
+% enable use of colours
+\usepackage{xcolor}
+
+% enable intelligent space (e.g. after defined command) 
+\usepackage{xspace}
+
+% support PDF bookmarks, links, etc.
+\definecolor{links}{HTML}{2A1B81}
+\usepackage[
+            pdfstartview=FitH,
+            pdfpagelayout=OneColumn,
+            bookmarks=true,
+            colorlinks,
+            linkcolor=,
+            urlcolor=links,
+            pdfpagelabels,
+            plainpages=false]{hyperref}
+\usepackage[numbered]{bookmark}
+\let\oldmaketitle\maketitle
+\renewcommand{\maketitle}{\let\theoldpage\thepage
+    \renewcommand{\thepage}{}
+    \oldmaketitle
+    \let\thepage\theoldpage
+}
+
+
 
 % add questions and answers
 \usepackage[]{exercise}

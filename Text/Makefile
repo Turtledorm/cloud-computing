@@ -9,8 +9,10 @@ all: $(TARGET)
 $(TARGET): .FORCE
 	@[ -d $(AUX) ] || mkdir $(AUX)
 	@cd aux && mv * .. &>/dev/null ||:
-	latexmk -interaction=nonstopmode -recorder- -halt-on-error -pdf $(TARGET:.pdf=)
-	@mv *.aux *.log *.fdb_latexmk *.toc aux &>/dev/null ||:
+	latexmk -interaction=nonstopmode -bibtex -recorder- -halt-on-error -pdf\
+		$(TARGET:.pdf=)
+	@mv main.run.xml main-blx.bib *.aux *.bbl *.log *.fdb_latexmk *.toc *.blg aux \
+		&>/dev/null ||:
 
 .FORCE:
 
@@ -18,7 +20,7 @@ $(TARGET): .FORCE
 .PHONY:
 clean:
 	latexmk -C
-	rm -rf $(AUX)/*
+	rm -rf $(AUX)/* *.bbl main.run.xml main-blx.bib
 
 .PHONY:
 view:

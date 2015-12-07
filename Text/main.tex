@@ -5,8 +5,13 @@
 % Change caption size
 \usepackage[font={small}]{caption}
 
-% preamble
+
 \input{preamble-vbm.tex}
+
+\usepackage[backend = bibtex, sorting = none]{biblatex}
+\bibliography{referencias}{}
+
+
 
 \title{Computação em Nuvem}
 
@@ -42,6 +47,8 @@ Vinícius Bitencourt Matos --- 8536221
 \input{gerenciamento-da-seguranca-da-informacao}
 \input{provedores-de-armazenamento}
 \input{conclusao}
-\input{PROVISORIO-bibliografia}
+
+
+\input{bibliografia}
 
 \end{document}

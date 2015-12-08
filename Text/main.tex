@@ -5,24 +5,31 @@
 % Change caption size
 \usepackage[font = {footnotesize}]{caption}
 
-
+% Preamble
 \input{preamble-vbm.tex}
 
+% Bibliography
 \usepackage[backend = bibtex, sorting = none]{biblatex}
 \renewbibmacro{in:}{}
 \bibliography{referencias}{}
+\urlstyle{same} % don't write URLs in monospaced font
 
+% Custom title features
+\usepackage{titling}
 
-
+\def\thecourse{MAC0412 --- Organização de Computadores}
+\def\theprofessor{Professor: Siang Wun Song}
+\def\theinstitution{
+	Instituto de Matemática e Estatística\\
+	Universidade de São Paulo
+}
 \title{Computação em Nuvem}
-
 \author{
     Leonardo Pereira Macedo   --- 8536065\\
     Vinícius Bitencourt Matos --- 8536221
 }
 
-\urlstyle{same}
-
+\date{Dezembro de 2015}
 
 
 \begin{document}
@@ -34,13 +41,24 @@
 \pdfbookmark[1]{Capa}{title} 
 
 
-
 \begin{titlepage}
-    \maketitle
+    \begin{center}
+		\large\theinstitution
+		\\\vfill
+		\Huge\thetitle
+		\\\vfill
+		\LARGE\thecourse\\
+			  \theprofessor
+		\\\vfill
+		\Large\theauthor
+		\\
+		\vfill
+		\Large\thedate
+    \end{center}
 \end{titlepage}
 \setcounter{page}{2}
 \pdfbookmark[1]{Sumário}{toc}
-\tableofcontents
+\tableofcontents 
 \clearpage
 
 \input{introducao}

@@ -21,6 +21,13 @@
     Vinícius Bitencourt Matos --- 8536221
 }
 
+% this fixes spacing of URLs (source: http://tex.stackexchange.com/a/98470)
+\urlstyle{same}
+\makeatletter
+\def\Url@twoslashes{\mathchar`\/\@ifnextchar/{\kern-.2em}{}}
+\g@addto@macro\UrlSpecials{\do\/{\Url@twoslashes}}
+\makeatother
+
 
 \begin{document}
 

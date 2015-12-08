@@ -3,7 +3,7 @@
 \def\RELEASEDOCUMENT{}
 
 % Change caption size
-\usepackage[font={small}]{caption}
+\usepackage[font = {footnotesize}]{caption}
 
 
 \input{preamble-vbm.tex}
@@ -21,26 +21,25 @@
     Vinícius Bitencourt Matos --- 8536221
 }
 
-% this fixes spacing of URLs (source: http://tex.stackexchange.com/a/98470)
 \urlstyle{same}
-\makeatletter
-\def\Url@twoslashes{\mathchar`\/\@ifnextchar/{\kern-.2em}{}}
-\g@addto@macro\UrlSpecials{\do\/{\Url@twoslashes}}
-\makeatother
+
 
 
 \begin{document}
 
+% prevent lines from going over margins
+\sloppy
+
 % add cover and table of contents to PDF bookmarks
 \pdfbookmark[1]{Capa}{title} 
-\pdfbookmark[1]{Sumário}{toc}
+
 
 
 \begin{titlepage}
     \maketitle
 \end{titlepage}
-
-
+\setcounter{page}{2}
+\pdfbookmark[1]{Sumário}{toc}
 \tableofcontents
 \clearpage
 
